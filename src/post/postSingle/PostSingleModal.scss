@@ -1,0 +1,39 @@
+.NextButton, .PrevButton {
+  width: 100px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.3;
+
+  a {
+    height: 100%;
+    align-items: center;
+    vertical-align: center;
+    display: flex;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .Icon {
+    font-size: 80px;
+    color: #ffffff;
+  }
+}
+
+.NextButton {
+  right: 0;
+}
+
+.PrevButton {
+  left: 0;
+}
+
+@media (max-width: 992px) {
+  .NextButton, .PrevButton {
+    display: none;
+  }
+}
