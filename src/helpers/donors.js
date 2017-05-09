@@ -32,5 +32,6 @@ export default {
   roelandp: 'bronze',
   stellabelle: 'bronze',
   pnc: 'bronze',
-  shaka: 'bronze',
+  lukestokes: 'bronze',
+  pharesim: 'bronze',
 };
