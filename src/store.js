@@ -3,7 +3,7 @@ import createLogger from 'redux-logger';
 import promiseMiddleware from 'redux-promise-middleware';
 import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
-import { omit } from 'lodash/object';
+import { pick } from 'lodash/object';
 import { applyMiddleware, createStore, compose } from 'redux';
 import api from './steemAPI';
 
@@ -51,9 +51,10 @@ if (process.env.IS_BROWSER) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   enhancer = composeEnhancers(
     applyMiddleware(...middleware),
-    persistState(['app', 'favorites', 'editor', 'bookmarks'], {
+    persistState(['app', 'favorites', 'editor', 'bookmarks', 'user'], {
       slicer: () => state => ({
-        app: omit(state.app, ['errorMessage', 'isFetching', 'isLoaded']),
+        app: pick(state.app, ['locale', 'sidebarIsVisible', 'layout']),
+        user: pick(state.user, ['votePower', 'following']),
         bookmarks: state.bookmarks,
         favorites: state.favorites,
         editor: state.editor,
