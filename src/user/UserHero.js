@@ -22,6 +22,7 @@ class UserMenuImpl extends React.Component {
     const { match, location, history, ...otherProps } = this.props;
     const current = this.props.location.pathname.split('/')[2];
     const currentKey = current || 'discussions';
+    console.log(this.props.user);
     return <UserMenu defaultKey={currentKey} onChange={this.onChange} {...otherProps} />;
   }
 }

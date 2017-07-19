@@ -10,6 +10,7 @@ import Profile from './user/UserProfile';
 import Followers from './user/UserFollowers';
 import Following from './user/UserFollowing';
 import Posts from './user/UserPosts';
+import Comments from './user/UserComments';
 import Reblogs from './user/UserReblogs';
 import Replies from './user/UserReplies';
 import Feed from './user/UserFeed';
@@ -35,6 +36,7 @@ export const UserRoutes = () =>
     <Route path="/@:name/reblogs" render={() => <User><Reblogs /></User>} />
     <Route path="/@:name/posts" render={() => <User><Posts /></User>} />
     <Route path="/@:name/feed" render={() => <User><Feed /></User>} />
+    <Route path="/@:name/comments" render={() => <User><Comments /></User>} />
     <Route path="/@:name/replies" render={() => <User><Replies /></User>} />
     <Route path="/@:name/followers" render={() => <User><Followers /></User>} />
     <Route path="/@:name/followed" render={() => <User><Following /></User>} />
